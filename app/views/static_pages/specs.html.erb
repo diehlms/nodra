@@ -1,13 +1,97 @@
-<% provide(:title, "Specs") %>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= yield(:title) %> | NODRA Sailing</title>
-  </head>
-  <body>
-    <h1>NODRA</h1>
-    <p>
-        Specs page for Nodra
-    </p>
-  </body>
-</html>
+<div class="subpage-container">
+    <div class="wrapper">
+      <nav id="sidebar">
+      <div class="sidebar-header">
+            <h3>Additional Links</h3>
+            <ul class="list-unstyled components">
+              <li>
+                  <%= link_to "Hull Weight-In List (official)", "http://nodra.com/nod_wts.htm" %>
+              </li>
+              <hr>
+              <li>
+                  <%= link_to "Critical Measurement Table", "http://nodra.com/nodcspec.htm" %>
+              </li>
+              <hr>
+              <li>
+                  <%= link_to "NOD Rigging by H. Marion", "http://nodra.com/gad_all.htm" %>
+              </li>
+              <hr>
+              <li>
+                  <%= link_to "Portsmouth Handicap Racing (for Mixed Fleet Races)", "http://nodra.com/nodports.htm" %>
+              </li>
+              <hr>
+              <li>
+                  <%= link_to "Mast/Spar Info", "http://nodra.com/spar.htm" %>
+              </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+    <div class="spec-tables">
+      <div class="hull-table">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Hull</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Length Overall</th>
+              <td>17' 0"</td>
+            </tr>
+            <tr>
+              <th scope="row">Length at Waterline</th>
+              <td>10' 6"</td>
+            </tr>
+            <tr>
+              <th scope="row">Beam</th>
+              <td colspan="2">5' 8"</td>
+            </tr>
+            <tr>
+              <th scope="row">Maximum Draft</th>
+              <td colspan="2">3' 6"</td>
+            </tr>
+            <tr>
+              <th scope="row">Minimum Weight</th>
+              <td colspan="2">400 lbs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sail-table">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Sail Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Main</th>
+              <td>78 sq. ft.</td>
+            </tr>
+            <tr>
+              <th scope="row">Jib</th>
+              <td>59 sq. ft.</td>
+            </tr>
+            <tr>
+              <th scope="row">Total</th>
+              <td colspan="2">137 sq. ft.</td>
+            </tr>
+            <tr>
+              <th scope="row">Mast Height (from deck)</th>
+              <td colspan="2">24' 7"</td>
+            </tr>
+            <tr>
+              <th scope="row">Boom Length</th>
+              <td colspan="2">7' 0"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <p>The cost for a new complete self-rigged ready to sail boat with sail is in the $6,000 - $9,000 range depending on hardware and desired sailmaker. </p>
+      </div>
+    </div>
+</div>
