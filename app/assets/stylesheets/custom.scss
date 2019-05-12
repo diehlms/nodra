@@ -58,6 +58,23 @@ ul {
     margin-top: 15px;
 }
 
+.photo-gallery img {
+    vertical-align: middle;
+    align-content: center;
+    max-width: 300px;
+    max-height: 200px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: solid 1px white;
+    justify-content: center;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
 /* sidebar */
 
 #sidebar {
@@ -70,4 +87,10 @@ ul {
     transition: all 0.3s;
     margin-top: 80px;
     padding-left: 10px;
+}
+
+/* navbar */
+
+.nav-item {
+    padding-left: 40px;
 }

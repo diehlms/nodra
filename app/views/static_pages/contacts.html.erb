@@ -1,13 +1,59 @@
-<% provide(:title, "Contact") %>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= yield(:title) %> | NODRA Sailing</title>
-  </head>
-  <body>
-    <h1>NODRA</h1>
-    <p>
-        Contacts Page for NODRA
-    </p>
-  </body>
-</html>
+<div class="contact-table">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Fleet</th>
+        <th scope="col">Location</th>
+        <th scope="col">Club/Association</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>No. 27</td>
+          <td>Eagle Lake, SW Michigan</td>
+          <td><%= link_to "Eagle Lake Sailing Club", "http://pages.prodigy.net/kurtmiller/nod.htm" %></td>
+        </tr>
+        <tr>
+          <td>NA</td>
+          <td>South Shore Yacht Club, SSYC, Turkeyfoot Lake, New Franklin, OH</td>
+          <td><%= link_to "SSYC Newsletter", "http://nodra.com/SSYC_Newsletter.pdf" %></td>
+        </tr>
+        <tr>
+          <td>NA</td>
+          <td>Hammond, NW Indiana, Wolf Lake</td>
+          <td><%= link_to "Illiana Yacht Club", "http://www.illianayachtclub.com/fleetnews.htm" %></td>
+        </tr>
+        <tr>
+          <td>No. 26</td>
+          <td>Leland/Traverse City, Michigan</td>
+          <td><%= link_to "Leland/Traverse City, Michigan", "http://www.lelandyachtclub.com/" %></td>
+        </tr>
+        <tr>
+          <td>Open Fleet</td>
+          <td>Tawas Bay, Lake Huron, Tawas MI</td>
+          <td><%= link_to "Tawas Bay Yacht Club", "http://www.tbyc.net/" %></td>
+        </tr>
+        <tr>
+          <td>Open Fleet</td>
+          <td>Hueston Woods, Acton Lake, Oxford/Cincinnati OH</td>
+          <td><%= link_to "Hueston Woods Sailing", "http://members.aol.com/hsasailing/hsa/" %></td>
+        </tr>
+        <tr>
+          <td>Cave Run, Morehead KY</td>
+          <td>Tawas Bay, Lake Huron, Tawas MI</td>
+          <td><%= link_to "Cave Run Sailing Assoc.", "http://www.caverunsailing.org/" %></td>
+        </tr>
+        <tr>
+          <td>NA</td>
+          <td>Aylesford Lake, Yacht Club, Nova Scotia</td>
+          <td><%= link_to "ALYC", "http://aylesford-lake-yacht-club.ca/" %></td>
+        </tr>
+      </tbody>
+  </table>
+  <br>
+  <div class="additional contacts">
+    <h3 class="section-title">For Additional Information, Please Contact:</h3>
+    <p>Guy Donnatelli, Commodore, at <strong>jtell0824@sbcgobal.net</strong><p>
+    <p>Paul J. Sniadecki, Rear-Commodore & webmaster, at <strong>psniadecki@yahoo.com</strong></p>
+  </div>
+</div>
