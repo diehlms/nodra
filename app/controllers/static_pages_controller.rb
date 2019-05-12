@@ -23,4 +23,5 @@ class StaticPagesController < ApplicationController
 
     def specs
     end
+    
 end
