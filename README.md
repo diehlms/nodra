@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the repository for an updated rails-based website for the NODRA sailing site (currently:
+http://nodra.com/)
 
-Things you may want to cover:
+This website will eventually have a blog feature for continual updates for sailing enthusiasts.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
