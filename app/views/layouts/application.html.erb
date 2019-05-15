@@ -12,10 +12,7 @@
   <body>
     <%= render 'layouts/header' %>
       <div class="container">
-        <% flash.each do |name, msg| %>
-          <ul>
-            <li><%= msg %></li>
-          </ul>
+        <%= render 'layouts/messages' %>
         <% end %>
         <%= render 'layouts/authenticate' %>
         <%= yield %>
