@@ -9,4 +9,10 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    def logged_in?
+    end
+
+    def require_user
+    end
+    
 end

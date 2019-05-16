@@ -3,12 +3,12 @@ class ArticlesController < ApplicationController
     before_action :set_article, only: [:edit, :update, :show, :destroy]
 
     def new
-        @article = Article.new
+        @article = current_user.articles.build
     end
 
     def create
         # render plain: params[:article].inspect
-        @article = Article.new(article_params)
+        @article = current_user.articles.new(article_params)
         if @article.save
             flash[:notice] = "Article added"
             redirect_to article_path(@article)
@@ -47,13 +47,14 @@ class ArticlesController < ApplicationController
         redirect_to articles_path
     end
 
-    def set_article
-        @article = Article.find(params[:id])
-    end
     
     private
 
         def article_params
             params.require(:article).permit(:title, :description)
+        end
+
+        def set_article
+            @article = Article.find(params[:id])
         end
 end
