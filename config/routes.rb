@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :articles
+  resources :users, except: [:new]
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
+  post 'login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get '/contacts', to: 'static_pages#contacts'
   get '/event', to: 'static_pages#event'
@@ -15,4 +17,5 @@ Rails.application.routes.draw do
   get '/join', to: 'static_pages#join'
   get '/sale', to: 'static_pages#sale'
   get '/specs', to: 'static_pages#specs'
+  get '/blog', to: 'articles#index'
 end
