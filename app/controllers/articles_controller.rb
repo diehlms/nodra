@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
 
     before_action :set_article, only: [:edit, :update, :show, :destroy]
+    helper_method :current_user, :logged_in?
+
 
     def new
         @article = current_user.articles.build
@@ -23,6 +25,7 @@ class ArticlesController < ApplicationController
 
     def update
         set_article
+        @article = current_user.articles.find(params[:id])
         if @article.update(article_params)
             flash[:notice] = "Article was updated"
             redirect_to article_path(@article)
@@ -42,9 +45,13 @@ class ArticlesController < ApplicationController
 
     def destroy
         set_article
-        @article.destroy
-        flash[:notice] = "Article was deleted"
-        redirect_to articles_path
+        @article = current_user.articles.find(params[:id])
+        if @article.destroy
+            flash[:notice] = "Article was deleted"
+            redirect_to articles_path
+        else
+            redirect_to articles_edit
+        end
     end
 
     
