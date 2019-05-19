@@ -22,6 +22,32 @@ textarea {
     margin-bottom: 10px;
 }
 
+.section-title {
+    font-family: 'Playfair Display', serif;
+}
+
+.text-section {
+    font-family: 'Playfair Display', serif;
+}
+
+.blue {
+    color: #365cbc;
+}
+
+.orange {
+    color: #fcaf00;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+h3 {
+    font-size: 12px;
+    font-family: 'Playfair Display', serif;
+    color: black;
+}
+
 /* containers */
 
 .container-main {
@@ -31,8 +57,9 @@ textarea {
 }
 
 .container-right img {
-    width: 200px;
-    height: 120px;
+    height: 500px;
+    width: 310px;
+    margin-left: 40px;
     margin-top: 15px;
     border-radius: 5px;
     border: solid 1px white;
@@ -75,37 +102,91 @@ ul {
     padding: 0 4px;
 }
 
+/* gallery */
+
+
+/* join */
+
+.jumbotron-address {
+    background-color: #365cbc;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    .lead {
+        font-family: 'Playfair Display', serif;
+        font-size: 30px;
+    }
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 10px;
+}
+ 
 /* sidebar */
 
 #sidebar {
     width: 20%;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0px;
     height: 100vh;
     z-index: 999;
+    padding-left: 7px;
     transition: all 0.3s;
-    margin-top: 80px;
-    padding-left: 10px;
+    margin-top: 70px;
+    font-family: 'Playfair Display', serif;
+    background-color: #365cbc;
+    li {
+        color: #fcaf00;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 20px;
+        line-height: 25px;
+        font-family: 'Playfair Display', serif;
+    }
 }
+
+.listcolor {
+    color: #fcaf00;
+}
+
 
 /* navbar */
 
 .nav-item {
     padding-left: 40px;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    vertical-align: center;
 }
 
 /* articles */
 
+.well.well-lg {
+    background-color: white;
+    line-height: 25px;
+}
 .article-body {
     border-top: 1px solid #eaeaea;
     padding-top: 15px;
     padding-bottom: 15px;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .article-title {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 36px;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.row {
+    margin-left: 40px;
 }
 
 /* users */
@@ -113,4 +194,24 @@ ul {
 .listing {
     list-style: none;
     padding-left: 0;
+}
+
+/* user portal */
+
+.userportal {
+    vertical-align: center;
+    text-align: center;
+    width: 20%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 80px;
+    margin-left: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 20px;
+    .sessionsection {
+        font-size: 14px;
+    }
 }

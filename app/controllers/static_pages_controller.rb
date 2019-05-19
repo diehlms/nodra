@@ -18,9 +18,6 @@ class StaticPagesController < ApplicationController
     def join
     end
 
-    def sale
-    end
-
     def specs
     end
     
