@@ -41,6 +41,7 @@ class ArticlesController < ApplicationController
 
     def show
         set_article
+        @comments = @article.comments
     end
 
     def destroy

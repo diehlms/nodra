@@ -6,5 +6,18 @@
         <%= time_ago_in_words(@article.created_at) %> ago</small>
         <hr>
         <%= simple_format(@article.description) %>
+        <%= link_to "Add Comment", new_comment_path(article_id: @article.id) %>
     </div>
+</div>
+<div class="comments">
+    <h3><% @article.comments.each do |c| %> </h3> 
+            <h4>Comment</h4>
+            <h5>From - <%= c.user.username %></h5>
+
+            <h6><%= c.comment %> </h6>
+
+            </br>
+            <%= link_to("Edit Comment", edit_comment_path(c)) %>
+            <%= link_to("Delete Comment", comment_path(c), method: :delete) %>
+    <% end %>
 </div>
