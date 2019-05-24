@@ -1,13 +1,12 @@
-<% provide(:title, "Events") %>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= yield(:title) %> | NODRA Sailing</title>
-  </head>
-  <body>
-    <h1>NODRA</h1>
-    <p>
-        Events page for Nodra
-    </p>
-  </body>
-</html>
+<h1 class="section-title">Events & Results</h1>
+<% if current_user.admin? %>
+  <%= link_to "Add an event", event_form %>
+<% end %>
+<% @events.each do |event| %>
+  <div class="events">
+    <%= event.event_title %>
+    <%= event.event_content %>
+    <%= event.date_from %>
+    <%= event.date_to %>
+  </div>
+<% end %>

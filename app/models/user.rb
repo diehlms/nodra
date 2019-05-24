@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :articles
   has_many :comments, through: :articles
+  has_many :events
 
   before_save { self.email = email.downcase }
   

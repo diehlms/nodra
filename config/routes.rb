@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
   resources :articles
   resources :comments
+  resources :events
   resources :users, except: [:new]
 
   get 'signup', to: 'users#new', as: 'signup'
@@ -20,4 +21,5 @@ Rails.application.routes.draw do
   get '/specs', to: 'static_pages#specs'
   get '/blog', to: 'articles#index'
   get '/post', to: 'articles#new'
+  get '/events', to: 'events#index'
 end

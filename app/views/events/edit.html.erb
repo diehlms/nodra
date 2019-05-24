@@ -1,0 +1,10 @@
+<h1>Edit Event</h1>
+<% if @event.errors.any? %>
+<h2>The following errors prevented the event from saving:</h2>
+    <ul>
+        <% @event.errors.full_messages.each do |msg|%>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+<%= render 'form' %>
