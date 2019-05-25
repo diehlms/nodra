@@ -1,8 +1,10 @@
-class User < ApplicationRecord
+class User < ActiveRecord::Base
   has_secure_password
   has_many :articles
   has_many :comments, through: :articles
   has_many :events
+
+  mount_uploaders :avatars, AvatarUploader
 
   before_save { self.email = email.downcase }
   

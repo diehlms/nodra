@@ -1,0 +1,10 @@
+<% for @gallery.all do |photo| %>
+    <div class="row">
+        <div class="gallery-container">
+            <ul class="photo-gallery column">
+                <%= photo %>
+            </ul>
+        </div>
+    </div>
+<% end %>
+<%= render 'form' %>

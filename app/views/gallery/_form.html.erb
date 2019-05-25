@@ -1,0 +1,11 @@
+<% form_for(@gallery) do |f| %>
+    <div class="field">
+        <%= f.label :avatars %>
+        <%= f.file_field :avatars, multiple: true %>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <%= f.submit class: 'btn btn-primary btn-large' %>
+        </div>
+    </div>
+<% end %>
