@@ -58,3 +58,31 @@
     <p>Paul J. Sniadecki, Rear-Commodore & webmaster, at <strong>psniadecki@yahoo.com</strong></p>
   </div>
 </div>
+<div class="contact-table">
+  <table class="table table-hover">
+  <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Fleet</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <div class="contact-table-editable">
+        <% if @contact.try(:any?) %>
+          <% @contacts.each do |contact| %>
+            <tr>
+              <td><%= contact.name %></td>
+              <td><%= contact.fleet %></td>
+              <td><%= contact.email %></td>
+              <td><%= contact.phone_number %></td>
+              <td><%= button_to "Delete", contact_path(contact), method: :delete, class: "btn btn-xs btn-danger" %> | <%= link_to "Edit", edit_contact_path(contact), class: "btn btn-xs btn-primary" %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </div>
+    </tbody>
+  </table>
+  <p><%= link_to "Add a contact", contact_form %></p>
+</div>

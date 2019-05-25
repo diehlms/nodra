@@ -1,0 +1,10 @@
+<h1>Edit Contact</h1>
+<% if @contact.errors.any? %>
+<h2>The following errors prevented the contact from saving:</h2>
+    <ul>
+        <% @contact.errors.full_messages.each do |msg|%>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+<%= render 'form' %>

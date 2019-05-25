@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
   resources :articles
   resources :comments
+  resources :contacts
   resources :events
   resources :users, except: [:new]
 
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy', as: 'logout'
-  get '/contacts', to: 'static_pages#contacts'
+  get '/contacts', to: 'contacts#index'
   get '/event', to: 'static_pages#event'
   get '/gallery', to: 'static_pages#gallery'
   get '/history', to: 'static_pages#history'
