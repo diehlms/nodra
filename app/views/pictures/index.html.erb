@@ -1,5 +1,18 @@
 <h1>Pictures</h1>
- 
-<%= link_to 'Add picture', new_picture_path %>
- 
-<%= render @pictures %>
+<% if logged_in? %> 
+    <%= link_to 'Add picture', new_picture_path %>
+<% end %>
+<%= @pictures.each do |picture| %>
+    <div class="picture-container">   
+        <div class="picture-title">
+            <%= picture.title %>
+        </div>
+        <div>
+            <%= image_tag(picture.image.url, alt: 'Image', :class => 'Image') if picture.image? %>
+        </div>
+        <div class="picture-body">
+            <%= picture.body %>
+        </div>
+    </div>
+    <br>
+<% end %>

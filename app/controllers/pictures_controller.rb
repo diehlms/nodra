@@ -1,6 +1,7 @@
 class PicturesController < ApplicationController
     before_action :set_picture, only: [:show, :edit, :update]
- 
+    helper_method :current_user, :logged_in?
+
     def index
       @pictures = Picture.all
     end
