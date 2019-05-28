@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
   has_many :comments, through: :articles
   has_many :events
 
-  mount_uploaders :avatars, AvatarUploader
-
   before_save { self.email = email.downcase }
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

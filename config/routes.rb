@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :contacts
   resources :events
-  resources :galleries
+  resources :pictures
   resources :users, except: [:new]
 
   get 'signup', to: 'users#new', as: 'signup'
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy', as: 'logout'
   get '/contacts', to: 'contacts#index'
   get '/event', to: 'static_pages#event'
-  get '/gallery', to: 'galleries#index'
+  get '/pictures', to: 'pictures#index'
   get '/history', to: 'static_pages#history'
   get '/join', to: 'static_pages#join'
   get '/sale', to: 'static_pages#sale'
