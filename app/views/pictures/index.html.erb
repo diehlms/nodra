@@ -1,18 +1,24 @@
-<h1>Pictures</h1>
-<% if logged_in? %> 
-    <%= link_to 'Add picture', new_picture_path %>
-<% end %>
-<%= @pictures.each do |picture| %>
-    <div class="picture-container">   
-        <div class="picture-title">
-            <%= picture.title %>
-        </div>
-        <div>
-            <%= image_tag(picture.image.url, alt: 'Image', :class => 'Image') if picture.image? %>
-        </div>
-        <div class="picture-body">
-            <%= picture.body %>
-        </div>
-    </div>
-    <br>
-<% end %>
+<div class="picture-container" align="center">
+    <h1>Pictures</h1>
+    <% if logged_in? %> 
+        <%= link_to 'Add picture', new_picture_path %>
+    <% else %>
+        <p>Please <%= link_to 'log in', login_path %> to post pictures</p>
+    <% end %>
+    <div class="image-container">
+        <%= @pictures.each do |picture| %>
+            <div class="picture-container">   
+                <div>
+                    <%= image_tag(picture.image.url, alt: 'Image', :class => 'Image') if picture.image? %>
+                </div>
+                <div class="picture-title">
+                    <%= picture.title%>
+                </div>
+                <div class="picture-body">
+                    <%= picture.body %>
+                </div>
+            </div>
+            <br>
+        <% end %>
+        
+</div>

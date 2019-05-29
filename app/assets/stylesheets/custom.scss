@@ -102,9 +102,6 @@ ul {
     padding: 0 4px;
 }
 
-/* gallery */
-
-
 /* join */
 
 .jumbotron-address {
@@ -126,42 +123,42 @@ ul {
  
 /* sidebar */
 
+
 #sidebar {
     width: 20%;
     position: fixed;
     top: 0;
     left: 0px;
     height: 100vh;
-    z-index: 999;
     padding-left: 7px;
-    transition: all 0.3s;
-    margin-top: 70px;
+    margin-top: 80px;
     font-family: 'Playfair Display', serif;
     background-color: #c1d9ff;
     li {
         color: #000000;
         padding-top: 10px;
         padding-bottom: 10px;
-        font-size: 20px;
-        line-height: 25px;
+        font-size: 18px;
+        text-overflow: ellipsis;
+        line-height: 24px;
         font-family: 'Playfair Display', serif;
     }
-}
-
-.listcolor {
-    color: #fcaf00;
 }
 
 
 /* navbar */
 
+.nav-icon {
+    padding-top: 10px;
+    font-size: 30px;
+    vertical-align: middle;
+}
 .nav-item {
+    padding-top: 23px;
     padding-left: 40px;
     font-family: 'Playfair Display', serif;
-    color: white;
     font-weight: bold;
     font-size: 30px;
-    vertical-align: center;
 }
 
 /* articles */
@@ -198,14 +195,14 @@ ul {
 
 /* user portal */
 
-.userportal {
+.userportal-text {
     vertical-align: center;
     text-align: center;
     width: 20%;
     position: fixed;
     top: 0;
     left: 0;
-    margin-top: 80px;
+    margin-top: 100px;
     margin-left: 10px;
     border: 1px solid black;
     padding: 10px;
@@ -218,18 +215,25 @@ ul {
 
 /* comments */
 
-.comment-snip {
-    border: 1px solid black;
-    border-radius: 5px;
-}
-.comment-content {
-    padding: 10px;
-    
+.jumbotron.comment {
+    background-color: #ceeeff;
 }
 
 /* pictures */
 
 .Image {
-    max-width: 500px;
+    max-width: 1000px;
+    border: none;
+    border-radius: 10px;
 }
 
+.image-container {
+    line-height: 24px;
+    font-size: 20px;
+}
+
+/* symbols */
+
+.home-icon {
+    font-size: 30px;
+}

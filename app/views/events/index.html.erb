@@ -1,24 +1,27 @@
-<h1 class="section-title">NODRA Events & Results</h1>
+<h1 class="section-title" align="center">NODRA Events & Results</h1>
     <% if logged_in? %>
         <%= link_to 'Create an event', new_event_path(@event) %>
     <% end %>
+    <br>
     <% @event.each do |event| %>
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
-                <div class="well well-lg">
+                <div class="event-container well well-lg">
                     <small>Posted: <%= time_ago_in_words(event.created_at) %> ago</small>
                     <div class="event-title">
                         <%= event.event_title %>
+                        <hr>
                     </div>
                     <div class="event-body">
                         <%= event.event_content %>
+                        <hr>
                     </div>
                     <span>
                         <div class="event-date">
-                            <%= event.date_from %>
+                            <strong>From: </strong><%= event.date_from %>
                         </div>
                         <div class="event-date">
-                            <%= event.date_to %>
+                            <strong>To: </strong><%= event.date_to %>
                         </div>
                     </span>
                     <div class="article-actions">

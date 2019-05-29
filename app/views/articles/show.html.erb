@@ -15,15 +15,17 @@
 </div>
 <div class="comments">
     <h3><% @article.comments.each do |c| %> </h3> 
-            <div class="comment-snip">
-                <div class="comment-content">
-                    <p class="comment-info">Posted by: <strong><%= c.user.username %></strong></p>
-                    <small>Created: <%= time_ago_in_words(c.created_at) %> ago</small>
-                    <hr>
-                    <p><%= c.comment %> </p>
-                    <% if logged_in? && c.user_id == current_user.id %>
-                        <%= button_to("Delete Comment", comment_path(c), method: :delete) %>
-                    <% end %>
+            <div class="jumbotron comment">
+                <div class="comment-snip">
+                    <div class="comment-content">
+                        <p class="comment-info">Posted by: <strong><%= c.user.username %></strong></p>
+                        <small>Created: <%= time_ago_in_words(c.created_at) %> ago</small>
+                        <hr>
+                        <p><%= c.comment %> </p>
+                        <% if logged_in? && c.user_id == current_user.id %>
+                            <%= button_to("Delete Comment", comment_path(c), method: :delete, :class => "btn btn-danger") %>
+                        <% end %>
+                    </div>
                 </div>
             </div>
             </br>

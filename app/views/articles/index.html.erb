@@ -3,6 +3,7 @@
 <% if !logged_in? %>
     <h3 align="center">Welcome! Please <%= link_to "sign in", login_path %> to post articles or comment!</h3>    
 <% end %>
+<br>
 <% if @articles.any? %>
     <% @articles.each do |article| %>
         <div class="row">
