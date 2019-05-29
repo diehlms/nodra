@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
   
-  resources :users
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
   resource :sessions, only: [:new, :create, :destroy]
   resources :articles
-  resources :comments
+  resources :comments, only: [:new, :create, :destroy]
   resources :contacts
   resources :events
   resources :pictures

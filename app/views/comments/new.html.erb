@@ -1,9 +1,9 @@
 <div id="comment-form">
     <%= form_for @comment do |f| %>
         <%= f.label :comment %>
-        <%= f.text_area :comment, class: "form-control" %>
+        <%= f.text_area :comment, class: 'form-control' %>
         <%= f.hidden_field :article_id %>
         <br>
-        <%= f.submit class: "btn btn-default dropdown-toggle" %>
+        <%= f.submit class: 'btn btn-default dropdown-toggle' %>
     <% end %>
 </div>

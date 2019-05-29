@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  before_create :confirmation_token
   has_secure_password
   has_many :articles
   has_many :comments, through: :articles
@@ -11,4 +12,17 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 105 },
   uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX}
 
+  private
+
+    def email_activate
+      self.email_confirmed = true
+      self.confirm_token = nil
+      save!(:validate => false)
+    end
+    
+    def confirmation_token
+      if self.confirm_token.blank?
+        self.confirm_token = SecureRandom.urlsafe_base64.to_s
+      end
+    end
 end
