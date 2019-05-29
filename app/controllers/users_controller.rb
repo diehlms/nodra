@@ -27,11 +27,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
       if @user.save
         UserMailer.registration_confirmation(@user).deliver_now
-        flash[:success] = "Please confirm your email address to continue"
+        flash.now[:success] = "Please confirm your email address to continue"
         redirect_to root_url
       else
         respond_to do |format|
-          flash[:error] = "Something went wrong!"
+          flash.now[:error] = "Something went wrong!"
           format.html { render :new }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
