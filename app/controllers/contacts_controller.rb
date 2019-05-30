@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-    helper_method :current_user
+    helper_method :current_user, :logged_in?
     
     def new
         @contact = Contact.new
