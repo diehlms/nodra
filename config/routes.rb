@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get :confirm_email
     end
   end
+
   resource :sessions, only: [:new, :create, :destroy]
   resources :articles
   resources :comments, only: [:new, :create, :destroy]
@@ -28,4 +29,7 @@ Rails.application.routes.draw do
   get '/blog', to: 'articles#index'
   get '/post', to: 'articles#new'
   get '/events', to: 'events#index'
+  get '/mastspar', to: 'static_pages#mastspar'
+  get '/gadfly', to: 'static_pages#gadfly'
+  
 end

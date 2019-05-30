@@ -9,7 +9,10 @@ class StaticPagesController < ApplicationController
     def event
     end
 
-    def gallery
+    def mastspar
+    end
+    
+    def gadfly
     end
 
     def history
