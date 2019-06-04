@@ -11,6 +11,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
 gem 'simple_form'
 gem 'carrierwave', '~> 1.0'
+gem 'aws-sdk-s3', require: false
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
