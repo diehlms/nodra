@@ -6,9 +6,6 @@ class PicturesController < ApplicationController
       @pictures = Picture.all
     end
    
-    def show
-    end
-   
     def new
       @picture = Picture.new
     end
@@ -33,6 +30,16 @@ class PicturesController < ApplicationController
       end
     end
    
+    def destroy
+      set_picture
+      if @picture.destroy
+          flash[:notice] = "Picture was deleted"
+          redirect_to root_url
+      else
+          redirect_to pictures_edit
+      end
+    end
+
     private
    
     def picture_params

@@ -216,7 +216,7 @@ ul {
 /* comments */
 
 .jumbotron.comment {
-    background-color: #ceeeff;
+    border: 1px solid black;
 }
 
 /* pictures */
@@ -230,6 +230,11 @@ ul {
 .image-container {
     line-height: 24px;
     font-size: 20px;
+}
+
+.Upload-button {
+    font-family: verdana;
+    line-height: 20px;
 }
 
 /* symbols */

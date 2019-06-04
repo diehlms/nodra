@@ -1,5 +1,6 @@
 <%= render 'layouts/userportal' %>
-<h2 align="center"><%= @article.title %></h2>
+<h2 align="center", class="section-title"><%= @article.title %></h2>
+<br>
 <div class="row">
     <div class="well col-xs-8 col-xs-offset-2">
         <small>Created by: <%= @article.user.username if @article.user %>,
@@ -13,21 +14,25 @@
         <% end %>
     </div>
 </div>
-<div class="comments">
-    <h3><% @article.comments.each do |c| %> </h3> 
-            <div class="jumbotron comment">
-                <div class="comment-snip">
-                    <div class="comment-content">
-                        <p class="comment-info">Posted by: <strong><%= c.user.username %></strong></p>
-                        <small>Created: <%= time_ago_in_words(c.created_at) %> ago</small>
-                        <hr>
-                        <p><%= c.comment %> </p>
-                        <% if logged_in? && c.user_id == current_user.id %>
-                            <%= button_to("Delete Comment", comment_path(c), method: :delete, :class => "btn btn-danger") %>
-                        <% end %>
+<div class="row">
+    <div class="well col-xs-8 col-xs-offset-2">
+        <div class="comments">
+            <h3><% @article.comments.each do |c| %> </h3> 
+                    <div class="jumbotron comment">
+                        <div class="comment-snip">
+                            <div class="comment-content">
+                                <p class="comment-info">Posted by: <strong><%= c.user.username %></strong></p>
+                                <small>Created: <%= time_ago_in_words(c.created_at) %> ago</small>
+                                <hr>
+                                <p><%= c.comment %> </p>
+                                <% if logged_in? && c.user_id == current_user.id %>
+                                    <%= button_to("Delete Comment", comment_path(c), method: :delete, :class => "btn btn-danger") %>
+                                <% end %>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <br>
-    <% end %>
+                    <br>
+            <% end %>
+        </div>
+    </div>
 </div>

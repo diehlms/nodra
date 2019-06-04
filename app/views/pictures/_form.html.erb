@@ -1,18 +1,19 @@
-<%= form_for picture do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
- 
-  <div>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </div>
- 
-  <div>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
- 
-  <%= f.submit %>
-<% end %>
+<div align="center">
+  <%= form_for picture do |f| %>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: "Limit: 50 characters" %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :body, placeholder: "Limit: 150 characters" %>
+    </div>
+    <div class="picture-container">
+          <%= f.label :image %>
+          <%= f.file_field :image %>
+    </div>
+    <br>
+      <%= f.submit "Post picture", class: 'btn btn-primary btn-large' %>
+  <% end %>
+</div>
