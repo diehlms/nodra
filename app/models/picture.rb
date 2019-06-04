@@ -3,5 +3,5 @@ class Picture < ApplicationRecord
     serialize :image, JSON
 
     validates :title, presence: true, length: { maximum: 30 }
-    validates :description, presence: true, length: { maximum: 120 }
+    validates :body, presence: true, length: { maximum: 120 }
 end
