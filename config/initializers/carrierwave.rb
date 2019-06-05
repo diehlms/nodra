@@ -13,9 +13,11 @@ else
       :region => ENV['AWS_S3_REGION']
     }
     config.fog_directory = ENV['AWS_BUCKET']
-    config.asset_host = "#{ENV['AWS_S3_ASSET_URL']}/#{ENV['AWS_BUCKET']}"
     config.storage = :fog
-    config.fog_public = true
-    config.fog_provider = 'fog/aws'
   end
 end
+
+
+# config.fog_public = false
+# config.fog_provider = 'fog/aws'
+# config.asset_host = "#{ENV['AWS_S3_ASSET_URL']}/#{ENV['AWS_BUCKET']}"
