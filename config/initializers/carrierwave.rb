@@ -3,6 +3,7 @@ CarrierWave.configure do |config|
     config.storage :file
     config.asset_host = 'http://localhost:3000'
   else
+    require 'carrierwave/storage/fog'
     config.fog_use_ssl_for_aws = true
     config.fog_directory  = ENV['FOG_DIRECTORY']
     config.fog_public     = true
