@@ -11,7 +11,6 @@ if Rails.env.production?
     config.storage = :fog
     config.fog_public = true
     config.fog_provider = 'fog/aws'
-  end
 elsif Rails.env.test? or Rails.env.development?
   CarrierWave.configure do |config|
     config.storage = :file
