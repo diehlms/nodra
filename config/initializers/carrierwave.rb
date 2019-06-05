@@ -1,10 +1,4 @@
-if Rails.env.test? or Rails.env.development?
-  CarrierWave.configure do |config|
-    config.storage = :file
-    config.root = Rails.root.join('public')
-    config.cache_dir = "#{Rails.root}/tmp/images"
-  end
-else
+if Rails.env.production?
   CarrierWave.configure do |config|  
     config.fog_credentials = {
       :provider => 'AWS',
@@ -15,6 +9,12 @@ else
     config.fog_directory = ENV['AWS_BUCKET']
     config.asset_host = "#{ENV['AWS_S3_ASSET_URL']}/#{ENV['AWS_BUCKET']}"
     config.storage = :fog
+    config.fog_public = true
     config.fog_provider = 'fog/aws'
   end
+elsif Rails.env.test? or Rails.env.development?
+  CarrierWave.configure do |config|
+    config.storage = :file
+    config.root = Rails.root.join('public')
+    config.cache_dir = "#{Rails.root}/tmp/images"
 end
