@@ -1,7 +1,7 @@
 if Rails.env.test? or Rails.env.development?
   CarrierWave.configure do |config|
     config.storage = :file
-    config.root = "#{Rails.root}/tmp"
+    config.root = Rails.root.join('public')
     config.cache_dir = "#{Rails.root}/tmp/images"
   end
 else
