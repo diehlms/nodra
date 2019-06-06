@@ -41,6 +41,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'rails_12factor', group: :production
 gem 'jquery-turbolinks', '~> 2.1'
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
