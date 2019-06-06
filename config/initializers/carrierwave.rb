@@ -16,8 +16,3 @@ else
     config.storage = :fog
   end
 end
-
-
-# config.fog_public = false
-# config.fog_provider = 'fog/aws'
-# config.asset_host = "#{ENV['AWS_S3_ASSET_URL']}/#{ENV['AWS_BUCKET']}"

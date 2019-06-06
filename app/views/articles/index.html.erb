@@ -1,33 +1,34 @@
-<%= render 'layouts/userportal' %>
 <h1 align="center"><div class="blue">NODRA</div><div class="orange">chat</div></h1>
 <% if !logged_in? %>
     <h3 align="center">Welcome! Please <%= link_to "sign in", login_path %> to post articles or comment!</h3>    
 <% end %>
 <br>
-<% if @articles.any? %>
-    <% @articles.each do |article| %>
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-                <div class="well well-lg">
-                    <small>Created by: <%= article.user.username if article.user %>,
-                    <%= time_ago_in_words(article.created_at) %> ago</small>
-                    <div class="article-title">
-                        <%= link_to article.title, article_path(article) %>
-                    </div>
-                    <div class="article-body">
-                        <%= truncate(article.description, length: 200) %>
-                    </div>
-                    <% if article.comments.any? %>
-                        <%= article.comments.count %> comments
-                    <% end %>
-                    <div class="article-actions">
-                        <% if logged_in? && article.user_id == current_user.id %>
-                            <%= link_to "Edit", edit_article_path(article), class: "btn btn-xs btn-primary" %>
-                            <%= button_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete this article?"}, class: "btn btn-xs btn-danger" %>
+<div class="container">
+    <% if @articles.any? %>
+        <% @articles.each do |article| %>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <div class="well well-lg">
+                        <small>Created by: <%= article.user.username if article.user %>,
+                        <%= time_ago_in_words(article.created_at) %> ago</small>
+                        <div class="article-title">
+                            <%= link_to article.title, article_path(article) %>
+                        </div>
+                        <div class="article-body">
+                            <%= truncate(article.description, length: 200) %>
+                        </div>
+                        <% if article.comments.any? %>
+                            <%= article.comments.count %> comments
                         <% end %>
+                        <div class="article-actions">
+                            <% if logged_in? && article.user_id == current_user.id %>
+                                <%= link_to "Edit", edit_article_path(article), class: "btn btn-xs btn-primary" %>
+                                <%= button_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete this article?"}, class: "btn btn-xs btn-danger" %>
+                            <% end %>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <% end %>
     <% end %>
-<% end %>
+</div>

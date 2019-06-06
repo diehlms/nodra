@@ -1,39 +1,41 @@
-<div class="contact-table">
-  <table class="table table-hover">
-  <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Fleet</th>
-        <th scope="col">Email</th>
-        <th scope="col">Phone Number</th>
-      </tr>
-    </thead>
-    <tbody>
-      <div class="contact-table-editable">
-          <% if @contacts.any? %>
-            <% @contacts.each do |contact| %>
-              <tr>
-                <td><%= contact.name %></td>
-                <td><%= contact.fleet %></td>
-                <td><%= contact.email %></td>
-                <td><%= contact.phone_number %></td>
-                <% if logged_in? && current_user.admin? %>
-                  <td><%= button_to "Delete", contact_path(contact), method: :delete, class: "btn btn-xs btn-danger" %> | <%= link_to "Edit", edit_contact_path(contact), class: "btn btn-xs btn-primary" %></td>
-                <% end %>
-              </tr>
+<div class="container">
+  <div class="contact-table">
+    <table class="table table-hover">
+    <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Fleet</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="contact-table-editable">
+            <% if @contacts.any? %>
+              <% @contacts.each do |contact| %>
+                <tr>
+                  <td><%= contact.name %></td>
+                  <td><%= contact.fleet %></td>
+                  <td><%= contact.email %></td>
+                  <td><%= contact.phone_number %></td>
+                  <% if logged_in? && current_user.admin? %>
+                    <td><%= button_to "Delete", contact_path(contact), method: :delete, class: "btn btn-xs btn-danger" %> | <%= link_to "Edit", edit_contact_path(contact), class: "btn btn-xs btn-primary" %></td>
+                  <% end %>
+                </tr>
+              <% end %>
             <% end %>
-          <% end %>
-      </div>
-    </tbody>
-  </table>
-  <% if logged_in? && current_user.admin? %>
-    <p><%= link_to "Add a contact", new_contact_path(@contact) %></p>
-  <% end %>
-</div>
-<br>
-<div class="additional contacts">
-    <h3 class="section-title">For Additional Information, Please Contact:</h3>
-    <br>
-    <p>Guy Donnatelli, Commodore, at <strong>jtell0824@sbcgobal.net</strong><p>
-    <p>Paul J. Sniadecki, Rear-Commodore & webmaster, at <strong>psniadecki@yahoo.com</strong></p>
+        </div>
+      </tbody>
+    </table>
+    <% if logged_in? && current_user.admin? %>
+      <p><%= link_to "Add a contact", new_contact_path(@contact) %></p>
+    <% end %>
+  </div>
+  <br>
+  <div class="additional contacts">
+      <h3 class="section-title">For Additional Information, Please Contact:</h3>
+      <br>
+      <p>Guy Donnatelli, Commodore, at <strong>jtell0824@sbcgobal.net</strong><p>
+      <p>Paul J. Sniadecki, Rear-Commodore & webmaster, at <strong>psniadecki@yahoo.com</strong></p>
+  </div>
 </div>
