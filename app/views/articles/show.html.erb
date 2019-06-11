@@ -13,25 +13,22 @@
         <% end %>
     </div>
 </div>
-<div class="row">
-    <div class="well col-xs-8 col-xs-offset-2">
-        <div class="comments">
-            <h3><% @article.comments.each do |c| %> </h3> 
-                    <div class="jumbotron comment">
-                        <div class="comment-snip">
-                            <div class="comment-content">
-                                <p class="comment-info">Posted by: <strong><%= c.user.username %></strong></p>
-                                <small>Created: <%= time_ago_in_words(c.created_at) %> ago</small>
-                                <hr>
-                                <p><%= c.comment %> </p>
-                                <% if logged_in? && c.user_id == current_user.id %>
-                                    <%= button_to("Delete Comment", comment_path(c), method: :delete, :class => "btn btn-danger") %>
-                                <% end %>
+<% if @article.comments.any? %>
+    <div class="row">
+        <div class="well col-xs-8 col-xs-offset-2">
+            <div class="comments">
+                <h3><% @article.comments.each do |c| %> </h3> 
+                            <div class="comment-snip">
+                                <div class="comment-content">
+                                    <span><p class="comment-info">Posted by: <strong><%= c.user.username %></strong></p><small>Created: <%= time_ago_in_words(c.created_at) %> ago</small></span>
+                                    <p><%= c.comment %> </p>
+                                    <% if logged_in? && c.user_id == current_user.id %>
+                                        <%= button_to("Delete Comment", comment_path(c), method: :delete, :class => "btn btn-danger") %>
+                                    <% end %>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <br>
-            <% end %>
+                <% end %>
+            </div>
         </div>
     </div>
-</div>
+<% end %>
