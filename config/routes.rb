@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
   root 'static_pages#home'
   
   resources :users do
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   resources :events
   resources :pictures
   resources :users, except: [:new]
+  resources :password_resets
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
