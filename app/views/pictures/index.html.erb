@@ -6,6 +6,11 @@
         <p>Please <%= link_to 'log in', login_path %> to post pictures</p>
     <% end %>
     <hr>
+   <% if notice %>
+        <div class="alert alert-info" role="alert">
+            <p><%= notice %></p>
+        </div>
+    <% end %>
     <div class="image-container">
         <%= @pictures.each do |picture| %>
             <div class="picture-wrapper">
@@ -28,6 +33,6 @@
                     </div>
                 </div>
             </div>
-        <br>
-    <% end %>
+        <% end %>
+    </div>
 </div>

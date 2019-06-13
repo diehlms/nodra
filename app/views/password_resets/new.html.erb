@@ -1,5 +1,9 @@
 <h1> Password Resets </h1>
-
+<% if notice %>
+    <div class="alert alert-info" role="alert">
+        <p><%= notice %></p>
+    </div>
+<% end %>
 <%= form_tag password_resets_path, :method => :post do %>
     <div class="field">
         <%= label_tag :email %>

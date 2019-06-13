@@ -20,11 +20,9 @@ class CommentsController < ApplicationController
     @comment.user_id = session[:user_id]
     @articleid = params[:id]
     if @comment.save
-      flash[:notice] = "comment created."
-      redirect_to '/articles'
+      redirect_to '/articles', notice: "comment created."
     else
-      flash[:error] = "Error creating comment."
-      redirect_to '/articles'
+      redirect_to '/articles', error: "Error creating comment."
     end
   end
 
@@ -35,8 +33,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find_by_id(params[:id])
     @comment.update(comment_params)
-    flash[:notice] = "Comment updated."
-    redirect_to '/articles'
+    redirect_to '/articles', notice: "Comment updated."
   end
 
   def destroy

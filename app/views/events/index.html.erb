@@ -1,4 +1,9 @@
 <h1 class="section-title" align="center">NODRA Events & Results</h1>
+<% if notice %>
+    <div class="alert alert-info" role="alert">
+        <p><%= notice %></p>
+    </div>
+<% end %>
 <div class="container">   
     <% if logged_in? && current_user.admin? %>
         <%= link_to 'Create an event', new_event_path(@event) %>

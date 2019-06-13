@@ -12,8 +12,7 @@ class ArticlesController < ApplicationController
         # render plain: params[:article].inspect
         @article = current_user.articles.new(article_params)
         if @article.save
-            flash[:notice] = "Article added"
-            redirect_to article_path(@article)
+            redirect_to article_path(@article), notice: "Article added"
         else
             render 'new'
         end
@@ -27,11 +26,9 @@ class ArticlesController < ApplicationController
         set_article
         @article = current_user.articles.find(params[:id])
         if @article.update(article_params)
-            flash[:notice] = "Article was updated"
-            redirect_to article_path(@article)
+            redirect_to article_path(@article), notice: "Article was updated"
         else
-            flash[:notice] = "Article was not updated"
-            render 'edit'
+            render 'edit', notice: "Article was not updated"
         end
     end
 
@@ -48,8 +45,7 @@ class ArticlesController < ApplicationController
         set_article
         @article = current_user.articles.find(params[:id])
         if @article.destroy
-            flash[:notice] = "Article was deleted"
-            redirect_to articles_path
+            redirect_to articles_path, notice: "Article was deleted"
         else
             redirect_to articles_edit
         end

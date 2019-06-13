@@ -27,8 +27,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
       if @user.save
         UserMailer.registration_confirmation(@user).deliver
-        flash[:success] = "Please confirm your email address to continue"
-        redirect_to root_url
+        redirect_to root_url, success: "Please confirm your email address to continue"
       else
         respond_to do |format|
           flash.now[:error] = "Something went wrong!"
@@ -66,11 +65,9 @@ class UsersController < ApplicationController
     user = User.find_by_confirm_token(params[:id])
     if user
       user.email_activate
-      flash[:success] = "Welcome to Nodra! Your email has been confirmed. Please sign in to continue"
-      redirect_to login_url
+      redirect_to login_url, success: "Welcome to Nodra! Your email has been confirmed. Please sign in to continue"
     else
-      flash[:error] = "Sorry. User information does not exist."
-      redirect_to root_url
+      redirect_to root_url, error: "Sorry. User information does not exist."
     end
   end
 

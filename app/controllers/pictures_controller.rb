@@ -20,10 +20,9 @@ class PicturesController < ApplicationController
     end
    
     def destroy
-      @picture = Picture.find_by(params[:id])
+      @picture = Picture.find(params[:id])
       if @picture.destroy
-          flash[:notice] = "Picture was deleted"
-          redirect_to root_url
+          redirect_to root_url, notice: "Picture was deleted"
       else
           redirect_to pictures_path
       end

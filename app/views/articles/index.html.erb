@@ -2,6 +2,11 @@
 <% if !logged_in? %>
     <h3 align="center">Welcome! Please <%= link_to "sign in", login_path %> to post articles or comment!</h3>    
 <% end %>
+<% if notice %>
+    <div class="alert alert-info" role="alert">
+        <p><%= notice %></p>
+    </div>
+<% end %>
 <br>
 <div class="container">
     <% if @articles.any? %>

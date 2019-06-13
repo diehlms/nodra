@@ -17,8 +17,7 @@ class EventsController < ApplicationController
     def create
         @event = current_user.events.new(event_params)
         if @event.save
-            flash[:notice] = "Event added"
-            redirect_to events_path
+            redirect_to events_path, notice: "Event added"
         else 
             render 'new'
         end
@@ -28,8 +27,7 @@ class EventsController < ApplicationController
         set_event
         @event = current_user.events.find(params[:id])
         if @event.destroy
-            flash[:notice] = "Event was deleted"
-            redirect_to root_url
+            redirect_to root_url, notice: "Event was deleted"
         else
             redirect_to events_edit
         end
@@ -39,8 +37,7 @@ class EventsController < ApplicationController
     def update
         @event = current_user.events.find(params[:id])
         if @event.update(event_params)
-            flash[:notice] = "Event was updated"
-            redirect_to event_path(@event)
+            redirect_to event_path(@event), notice: "Event was updated"
         else
             render 'new'
         end
