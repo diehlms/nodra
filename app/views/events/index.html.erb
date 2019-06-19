@@ -23,17 +23,6 @@
     </div>
 </div>
 
-<div class="events-display">
-    <% if current_user.admin? %>
-        <%= link_to "Add an Event", new_event_path %>
-    <% end %>
-    <% if @events %>
-        <% @events.each do |event| %>
-            <%= event.title %>
-        <% end %>
-    <% end %>
-</div>
-
 <h1 class="section-title" align="center">NODRA Events & Results</h1>
 <% if notice %>
     <div class="alert alert-info" role="alert">
