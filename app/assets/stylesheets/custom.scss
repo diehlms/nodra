@@ -47,6 +47,9 @@ h3 {
 
 /* containers */
 
+.container {
+    margin-bottom: 100px;
+}
 .container-main {
     display: grid;
     grid-template-columns: 66% 33%;

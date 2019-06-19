@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'password_resets/new'
-  root 'static_pages#home'
+  root 'events#index'
   
   resources :users do
     member do
