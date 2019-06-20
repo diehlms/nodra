@@ -5,35 +5,29 @@
         <p><%= notice %></p>
     </div>
 <% end %>
-<div class="row">
-    <div class="well col-xs-8 col-xs-offset-2">
-        <small>Created by: <%= @article.user.username if @article.user %>,
-        <%= time_ago_in_words(@article.created_at) %> ago</small>
-        <hr>
-        <%= simple_format(@article.description) %>
-        <% if logged_in? %>
-            <%= link_to "Add Comment", new_comment_path(article_id: @article.id) %>
-        <% else %>
-            <p>please <%= link_to 'log In', login_path%> to post comments</p>
-        <% end %>
-    </div>
+<div class="article-main row">
+    <small>Created by: <%= @article.user.username if @article.user %>,
+    <%= time_ago_in_words(@article.created_at) %> ago</small>
+    <hr>
+    <%= simple_format(@article.description) %>
+    <% if logged_in? %>
+        <%= link_to '<i class="fa fa-plus-square"></i> add comment'.html_safe, new_comment_path(article_id: @article.id) %>
+    <% else %>
+        <p>please <%= link_to 'log In', login_path%> to post comments</p>
+    <% end %>
 </div>
 <% if @article.comments.any? %>
     <div class="row">
-        <div class="well col-xs-8 col-xs-offset-2">
-            <div class="comments">
-                <h3><% @article.comments.each do |c| %> </h3> 
-                            <div class="comment-snip">
-                                <div class="comment-content">
-                                    <span><p class="comment-info">Posted by: <strong><%= c.user.username %></strong></p><small>Created: <%= time_ago_in_words(c.created_at) %> ago</small></span>
-                                    <p><%= c.comment %> </p>
-                                    <% if logged_in? && c.user_id == current_user.id %>
-                                        <%= button_to("Delete Comment", comment_path(c), method: :delete, :class => "btn btn-danger") %>
-                                    <% end %>
-                                </div>
-                            </div>
+        <div class="comment">
+            <h3><% @article.comments.each do |c| %> </h3> 
+                <span><p class="comment-info">Posted by: <strong><%= c.user.username %></strong></p><small>Created: <%= time_ago_in_words(c.created_at) %> ago</small></span>
+                <p><%= c.comment %> </p>
+                <% if logged_in? && c.user_id == current_user.id %>
+                    <%= button_to comment_path(c), method: :delete, class: "btn btn-xs btn-danger pull-right" do %>
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    <% end %>
                 <% end %>
-            </div>
+            <% end %>
         </div>
     </div>
 <% end %>

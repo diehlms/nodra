@@ -1,12 +1,12 @@
 <div class="picture-container" align="center">
     <h1>Pictures</h1>
     <% if logged_in? %> 
-        <%= link_to 'Add picture', new_picture_path %>
+        <%= link_to '<i class="fa fa-plus-square"></i> Add picture'.html_safe, new_picture_path %>
     <% else %>
         <p>Please <%= link_to 'log in', login_path %> to post pictures</p>
     <% end %>
     <hr>
-   <% if notice %>
+    <% if notice %>
         <div class="alert alert-info" role="alert">
             <p><%= notice %></p>
         </div>

@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 /* universal */
 
@@ -141,27 +142,10 @@ ul {
 
 /* articles */
 
-.well.well-lg {
-    background-color: white;
-    line-height: 25px;
-}
-.article-body {
-    border-top: 1px solid #eaeaea;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.article-title {
-    font-weight: bold;
-    font-size: 36px;
-    padding: 5px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.row {
-    margin-left: 40px;
+.article.card-body {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 30px;
+    margin-bottom: 30px;
 }
 
 /* users */

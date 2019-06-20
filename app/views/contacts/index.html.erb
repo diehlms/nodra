@@ -24,7 +24,14 @@
                   <td><%= contact.email %></td>
                   <td><%= contact.phone_number %></td>
                   <% if logged_in? && current_user.admin? %>
-                    <td><%= button_to "Delete", contact_path(contact), method: :delete, class: "btn btn-xs btn-danger" %> | <%= link_to "Edit", edit_contact_path(contact), class: "btn btn-xs btn-primary" %></td>
+                    <td>
+                      <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_contact_path(contact), class: "btn btn-sm btn-primary" %>
+                    </td>
+                    <td>
+                      <%= button_to contact_path(contact), method: :delete, class: "btn btn-sm btn-danger" do %>
+                        <i class="fa fa-trash"></i>
+                      <% end %>
+                    </td>
                   <% end %>
                 </tr>
               <% end %>
@@ -33,7 +40,7 @@
       </tbody>
     </table>
     <% if logged_in? && current_user.admin? %>
-      <p><%= link_to "Add a contact", new_contact_path(@contact) %></p>
+      <%= link_to '<i class="fa fa-plus-square"></i> Add a contact'.html_safe, new_contact_path(@contact) %>
     <% end %>
   </div>
   <br>

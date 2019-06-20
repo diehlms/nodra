@@ -5,7 +5,11 @@
         <h2>The National One-Design Racing Association</h2>
     </div>
 </div>
-
+<% if notice %>
+    <div class="alert alert-info" role="alert">
+        <p><%= notice %></p>
+    </div>
+<% end %>
 <div class="container-main">
     <div class="container-left section-title">
     <h3 class="section-title">Background</h3>
@@ -24,14 +28,9 @@
 </div>
 
 <h1 class="section-title" align="center">NODRA Events & Results</h1>
-<% if notice %>
-    <div class="alert alert-info" role="alert">
-        <p><%= notice %></p>
-    </div>
-<% end %>
 <div class="container">   
     <% if logged_in? && current_user.admin? %>
-        <%= link_to 'Create an event', new_event_path(@event) %>
+        <button class="btn btn-primary"><i class="fa fa-edit"></i><%= link_to ' Create an event', new_event_path(@event) %></button>
     <% end %>
     <br>
     <hr>
