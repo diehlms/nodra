@@ -126,9 +126,9 @@ ul {
     position: fixed;
     top: 0;
     left: 0px;
-    height: 100vh;
     padding-left: 7px;
     padding-top: 10%;
+    height: 100%;
     font-family: 'Playfair Display', serif;
     background-color: #c1d9ff;
     li {
@@ -145,23 +145,41 @@ ul {
 
 /* articles */
 
-.article.card-body {
+.comment.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 30px;
-    margin-bottom: 30px;
 }
 
+.article.card-body {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    .article-title {
+        border-bottom: 1px dotted grey;
+    }
+}
+.comment.card-body {
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+}
+
+.comment-info {
+    border-top: 2px dotted lightgray;
+    padding-top: 10px;
+}
+
+.UIbutton {
+    display: inline-block;
+    padding-top: 10px;
+}
 /* users */
 
 .listing {
     list-style: none;
     padding-left: 0;
-}
-
-/* comments */
-
-.jumbotron.comment {
-    border: 1px solid black;
 }
 
 /* pictures */
@@ -196,6 +214,15 @@ ul {
     line-height: 20px;
 }
 
+.event-button {
+    display: inline-block;
+}
+
+.event-container {
+    margin-top: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 /* symbols */
 
 .home-icon {

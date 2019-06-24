@@ -11,3 +11,12 @@
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %>
+
+<% if @user.articles.any? %>
+  <p>Posts by <%= @user.username %>:
+  <ul>
+  <% @user.articles.each do |article| %>
+      <li><%= link_to "article", article_path %></li>
+  <% end %>
+  </ul>
+<% end %>

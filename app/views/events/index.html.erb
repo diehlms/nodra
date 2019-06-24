@@ -27,40 +27,30 @@
     </div>
 </div>
 
-<h1 class="section-title">NODRA Events & Results</h1>
-<div class="container">   
-    <% if logged_in? && current_user.admin? %>
-        <button class="btn btn-primary mx-auto"><i class="fa fa-edit"></i><%= link_to ' Create an event', new_event_path(@event) %></button>
-    <% end %>
-    <br>
-    <hr>
+
+<span class="event-button"><h1 class="section-title">NODRA Events & Results</h1></span>
+<% if logged_in? && current_user.admin? %>
+    <span class="event-button"><button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i><%= link_to ' Create an event', new_event_path(@event) %></button></span>
+<% end %>
+<div class="event-container container">
     <% @event.each do |event| %>
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-                <div class="event-container well well-lg">
-                    <small>Posted: <%= time_ago_in_words(event.created_at) %> ago</small>
-                    <div class="event-title">
-                        <%= event.event_title %>
-                        <hr>
-                    </div>
-                    <div class="event-body">
-                        <%= event.event_content %>
-                        <hr>
-                    </div>
-                    <span>
-                        <div class="event-date">
-                            <strong>From: </strong><%= event.date_from %>
-                        </div>
-                        <div class="event-date">
-                            <strong>To: </strong><%= event.date_to %>
-                        </div>
-                    </span>
-                    <div class="article-actions">
-                        <% if logged_in? && event.user_id == current_user.id %>
-                            <%= link_to "Edit", edit_event_path(event), class: "btn btn-xs btn-primary" %>
-                            <%= button_to "Delete", event_path(event), method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, class: "btn btn-xs btn-danger" %>
-                        <% end %>
-                    </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="event-title">
+                    <%= event.event_title %>
+                </div>
+                <div class="event-body">
+                    <%= event.event_content %>
+                </div>
+                <div class="event-date">
+                    <span class="UIbutton"><strong>From: </strong><%= event.date_from %></span>
+                    <span class="UIbutton"><strong>To: </strong><%= event.date_to %></span>
+                </div>
+                <div class="article-actions">
+                    <% if logged_in? && event.user_id == current_user.id %>
+                        <span class="UIbutton"><%= link_to "Edit", edit_event_path(event), class: "btn btn-xs btn-primary" %></span>
+                        <span class="UIbutton"><%= button_to "Delete", event_path(event), method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, class: "btn btn-xs btn-danger" %></span>
+                    <% end %>
                 </div>
             </div>
         </div>

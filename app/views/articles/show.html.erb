@@ -5,27 +5,30 @@
         <p><%= notice %></p>
     </div>
 <% end %>
-<div class="article-main row">
-    <small>Created by: <%= @article.user.username if @article.user %>,
-    <%= time_ago_in_words(@article.created_at) %> ago</small>
-    <hr>
-    <%= simple_format(@article.description) %>
-    <% if logged_in? %>
-        <%= link_to '<i class="fa fa-plus-square"></i> add comment'.html_safe, new_comment_path(article_id: @article.id) %>
-    <% else %>
-        <p>please <%= link_to 'log In', login_path%> to post comments</p>
-    <% end %>
+<div class="card">
+    <div class="article card-body">
+        <small>Created by: <%= link_to @article.user.username if @article.user %>,
+        <%= time_ago_in_words(@article.created_at) %> ago</small>
+        <hr>
+        <%= simple_format(@article.description) %>
+        <% if logged_in? %>
+            <%= link_to '<i class="fa fa-plus-square"></i> add comment'.html_safe, new_comment_path(article_id: @article.id) %>
+        <% else %>
+            <p>please <%= link_to 'log In', login_path%> to post comments</p>
+        <% end %>
+    </div>
 </div>
+<h2 align="center", class="section-title">Replies:</h2>
 <% if @article.comments.any? %>
-    <div class="row">
-        <div class="comment">
+    <div class="comment card">
+        <div class="comment card-body">
             <h3><% @article.comments.each do |c| %> </h3> 
-                <span><p class="comment-info">Posted by: <strong><%= c.user.username %></strong></p><small>Created: <%= time_ago_in_words(c.created_at) %> ago</small></span>
+                <span><p class="comment-info">Posted by: <strong><%= link_to c.user.username %></strong></p><small>Created: <%= time_ago_in_words(c.created_at) %> ago</small></span>
                 <p><%= c.comment %> </p>
                 <% if logged_in? && c.user_id == current_user.id %>
-                    <%= button_to comment_path(c), method: :delete, class: "btn btn-xs btn-danger pull-right" do %>
+                    <span class="UIbutton"><%= button_to comment_path(c), method: :delete, class: "btn btn-xs btn-danger pull-right" do %>
                         <i class="fa fa-trash" aria-hidden="true"></i>
-                    <% end %>
+                    <% end %></span>
                 <% end %>
             <% end %>
         </div>
