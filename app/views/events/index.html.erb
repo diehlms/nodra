@@ -5,11 +5,6 @@
         <h2>The National One-Design Racing Association</h2>
     </div>
 </div>
-<% if notice %>
-    <div class="alert alert-info" role="alert">
-        <p><%= notice %></p>
-    </div>
-<% end %>
 <div class="container-main">
     <div class="container-left section-title">
     <h3 class="section-title">Background</h3>
@@ -33,26 +28,28 @@
     <span class="event-button"><button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i><%= link_to ' Create an event', new_event_path(@event) %></button></span>
 <% end %>
 <div class="event-container container">
-    <% @event.each do |event| %>
-        <div class="card">
-            <div class="card-body">
-                <div class="event-title">
-                    <%= event.event_title %>
-                </div>
-                <div class="event-body">
-                    <%= event.event_content %>
-                </div>
-                <div class="event-date">
-                    <span class="UIbutton"><strong>From: </strong><%= event.date_from %></span>
-                    <span class="UIbutton"><strong>To: </strong><%= event.date_to %></span>
-                </div>
-                <div class="article-actions">
-                    <% if logged_in? && event.user_id == current_user.id %>
-                        <span class="UIbutton"><%= link_to "Edit", edit_event_path(event), class: "btn btn-xs btn-primary" %></span>
-                        <span class="UIbutton"><%= button_to "Delete", event_path(event), method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, class: "btn btn-xs btn-danger" %></span>
-                    <% end %>
+    <% if @events %>
+        <% @events.each do |event| %>
+            <div class="card">
+                <div class="card-body">
+                    <div class="event-title">
+                        <%= event.event_title %>
+                    </div>
+                    <div class="event-body">
+                        <%= event.event_content %>
+                    </div>
+                    <div class="event-date">
+                        <span class="UIbutton"><strong>From: </strong><%= event.date_from %></span>
+                        <span class="UIbutton"><strong>To: </strong><%= event.date_to %></span>
+                    </div>
+                    <div class="article-actions">
+                        <% if logged_in? && event.user_id == current_user.id %>
+                            <span class="UIbutton"><%= link_to "Edit", edit_event_path(event), class: "btn btn-xs btn-primary" %></span>
+                            <span class="UIbutton"><%= button_to "Delete", event_path(event), method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, class: "btn btn-xs btn-danger" %></span>
+                        <% end %>
+                    </div>
                 </div>
             </div>
-        </div>
+        <% end %>
     <% end %>
 </div>

@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to '/articles', notice: "comment created."
     else
-      redirect_to '/articles', error: "Error creating comment."
+      redirect_to '/articles', notice: "Error creating comment."
     end
   end
 
