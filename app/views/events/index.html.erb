@@ -27,8 +27,8 @@
 <% if logged_in? && current_user.admin? %>
     <span class="event-button"><button class="btn btn-primary btn-xs"><i class="fa fa-edit"></i><%= link_to ' Create an event', new_event_path(@event) %></button></span>
 <% end %>
-<div class="event-container container">
-    <% if @events %>
+<% if @events %>
+    <div class="event-container container">
         <% @events.each do |event| %>
             <div class="card">
                 <div class="card-body">
@@ -51,5 +51,5 @@
                 </div>
             </div>
         <% end %>
-    <% end %>
-</div>
+    </div>
+<% end %>
