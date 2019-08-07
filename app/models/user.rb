@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   before_create :confirmation_token
   has_secure_password
-  has_many :articles
+  has_many :articles, dependent: :destroy
   has_many :comments, through: :articles
   has_many :events
 
@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   
   validates :email, presence: true, length: { maximum: 105 },
   uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX}
+  validates :username, presence: true, length: { minimum: 6, maximum: 20}
   
   def email_activate
     self.email_confirmed = true

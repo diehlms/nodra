@@ -11,8 +11,8 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get gallery page" do
-    get static_pages_gallery_url
+  test "should get picture page" do
+    get static_pages_picture_url
     assert_response :success
   end
 
