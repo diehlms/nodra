@@ -10,3 +10,14 @@ p {
 .section-title {
     font-size: 30px;
 }
+
+@media only screen and (max-width: 400px) {
+    .listcolor {
+        font-size: 12px;
+        word-wrap: break-word;
+        line-height: 0.8em;
+    }
+    .section-title {
+        font-size: 12px;
+    }
+}

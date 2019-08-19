@@ -7,7 +7,7 @@
 </div>
 <div class="container-main">
     <div class="container-left section-title">
-    <h3 class="section-title">Background</h3>
+        <h3 class="section-title">Background</h3>
         <div class="text-section">
             <p>Swift and graceful, the 17-foot National One-Design (NOD) is a classic sloop-rigged sailboat that offers comfortable day sailing as well as competitive racing.  Designed in 1936 by W.F.(Bill) Crosby, the boat is still upholding the adage that “if it looks good, it is good.” The speedy and stable boat was immediately popular when its lines first appeared in the January 1937 issue of The Rudder magazine.  Today well over 1,000 NODs are sailing in the United Sates, Canada, England and Switzerland with about 850 of them registered with the National One-Design Racing Association (NODRA) in the U.S.</p>
             <p>The reasons for this popularity are readily apparent.  Although designed more than 60 years ago, the NOD is a thoroughly modern, well balanced boat that is a joy to sail.  The tall mast with a high aspect ratio sail plan, a narrow and deep centerboard and an inboard rudder enable the NOD to sail exceptionally close to the wind and provide outstanding maneuverability.  A moderately beamy hull overhangs a hard chine and sweet sheer make for a stable and dry boat.  Class rules allowing only two sails – a mainsail and large jib – help keep sailing simple.</p>
@@ -30,7 +30,7 @@
 <% if @events %>
     <div class="event-container container">
         <% @events.each do |event| %>
-            <div class="card">
+            <div class="event card">
                 <div class="card-body">
                     <div class="event-title">
                         <%= event.event_title %>
