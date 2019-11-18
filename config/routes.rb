@@ -33,5 +33,4 @@ Rails.application.routes.draw do
   get '/events', to: 'events#index'
   get '/mastspar', to: 'static_pages#mastspar'
   get '/gadfly', to: 'static_pages#gadfly'
-  
 end
