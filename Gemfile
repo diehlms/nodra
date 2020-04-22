@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 gem 'rails_12factor', group: :production
 gem 'jquery-turbolinks', '~> 2.1'

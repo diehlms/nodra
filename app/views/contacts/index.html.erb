@@ -23,7 +23,7 @@
                   <td><%= contact.fleet %></td>
                   <td><%= contact.email %></td>
                   <td><%= contact.phone_number %></td>
-                  <% if logged_in? && current_user.admin? %>
+                  <% if logged_in? && current_user.admin %>
                     <td>
                       <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_contact_path(contact), class: "btn btn-sm btn-primary" %>
                     </td>
@@ -39,7 +39,7 @@
         </div>
       </tbody>
     </table>
-    <% if logged_in? && current_user.admin? %>
+    <% if logged_in? %>
       <%= link_to '<i class="fa fa-plus-square"></i> Add a contact'.html_safe, new_contact_path(@contact) %>
     <% end %>
   </div>
