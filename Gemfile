@@ -10,7 +10,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'bcrypt', '~> 3.1.7'
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
 gem 'simple_form'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'aws-sdk-s3', require: false
 gem 'fog'
 gem 'fog-aws', group: :production
