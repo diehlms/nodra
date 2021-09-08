@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.3'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'bcrypt', '~> 3.1.7'
-gem 'better_errors', '~> 2.1', '>= 2.1.1'
+gem 'better_errors', '~> 2.8'
 gem 'simple_form'
 gem 'carrierwave', '~> 1.0'
 gem 'aws-sdk-s3', require: false
